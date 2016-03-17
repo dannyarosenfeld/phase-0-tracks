@@ -1,15 +1,49 @@
-#contact-info p {
-	font-size: .8em;
 
+#contact-info a{
+	font-size: .8em;
+	text-decoration:none;
+	margin-right: 15px;
 }
 
 .job {
-	background:#e9e5dc;
-	padding: 4px;
-	margin-top: 4em;
+	background: #e9e5dc;
+	border-radius: 5px;
+	padding: 20px;
+	margin-bottom: 50px;
 }
+
 
 ul {
 	font-size: .8em;
-
 }
+
+#volunteer-experience ul li {
+	border:4px dotted #1DA1F2;
+}
+
+
+.job ol li {
+border:4px dashed hotpink;
+}
+
+
+a:link {
+    color: pink;
+}
+
+
+a:visited{
+color:green;
+}
+
+
+a:hover {
+color: grey;
+}
+
+a:active {
+	color: #0000FF;
+}
+
+
+
