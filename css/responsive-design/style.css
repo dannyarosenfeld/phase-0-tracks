@@ -1,8 +1,12 @@
 body {
-  max-width:960px;
-  
+ /*max-width:960px; */
+    width: 70%;
+  margin-left:auto;
+  margin-right: auto;
+  outline:1px solid green;
 
 }
+
 
 
 blockquote {
@@ -40,18 +44,25 @@ figcaption {
 
 #external-links {
  display:inline-block;
-  width:22%;
+  width:200px;
   border:2px solid black;
-   vertical-align:text-top;
+  vertical-align:text-top; 
 
 
 }
 
 main {
 display:inline-block;
-width: 75%;
- vertical-align:text-top;
+width: 500px;
+vertical-align:text-top;
+outline:1px solid pink;
+
+}
 
 
 
+@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
 }
