@@ -13,22 +13,16 @@
 
 
 ul {
-
 	font-size: .8em;
-
 }
 
 #volunteer-experience ul li {
-
-border:4px dotted #1DA1F2;
-
+	border:4px dotted #1DA1F2;
 }
 
 
 .job ol li {
-
 border:4px dashed hotpink;
-
 }
 
 
@@ -39,7 +33,6 @@ a:link {
 
 a:visited{
 color:green;
-
 }
 
 
