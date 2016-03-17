@@ -5,24 +5,18 @@
 	margin-left: auto;
 }
 
-
-
-
 .octopus {
 	position:relative;
-
-
 }
 
 .relative1 {
-position: relative;
-top: -400px;
-left:-9px;
+	position: relative;
+	top: -400px;
+	left:-9px;
 }
 
 .relative2 {
 	position:relative;
 	top: -370px;
 	left:38px;
-
 }
