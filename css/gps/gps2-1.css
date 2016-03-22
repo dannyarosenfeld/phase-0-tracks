@@ -1,0 +1,35 @@
+html {
+  font-family: helvetica;
+  background-color: beige;
+}
+
+header {
+  border: 1px solid black;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-bottom: 10px;
+}
+
+.column-1 {
+  width:40%;
+  padding:1.1em;
+  display:inline-block;
+  background: rgba(128, 128, 128, .5);
+  vertical-align:text-top;
+  
+}
+
+.column-2 {
+  width:40%;
+  padding:1.1em;
+  margin-left:1.2em;
+  background: rgba(128, 128, 128, .5);
+  display:inline-block;
+  vertical-align:text-top;
+}
+
+footer {
+  border: 1px solid black;
+  padding: 8px;
+  margin-top: 10px;
+}
