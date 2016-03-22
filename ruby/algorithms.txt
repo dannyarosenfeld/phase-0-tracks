@@ -1,0 +1,38 @@
+How to Use an Elevator Algorithm
+
+
+One Up arrow button exists to the left side of the elevator
+One DOWN arrow button exists to the left side of the elevator 
+
+
+While there are two arrow buttons to the left of the elevator
+
+
+If you need to go up push the UP arrow
+	Up arrow pushed
+	take 3 side-steps to the right
+	if door is closed... then wait.
+
+	if door is open then take three steps forward
+	turn 90 degrees to the left
+	take one step forward
+	turn 90 degrees to the left
+	PUSH A BUTTON > THAN THE FLOOR YOU ARE ON
+end
+
+
+
+If you need to go down push the DOWN arrow
+	down arrow pushed
+	take 3 side-steps to the right
+	if door is closed... then wait.
+
+
+	if door is open then take three steps forward
+	turn 90 degrees to the left
+	take one step forward
+	turn 90 degrees to the left
+	PUSH A BUTTON < THAN THE FLOOR YOU ARE ON
+end
+
+end
