@@ -36,3 +36,69 @@ If you need to go down push the DOWN arrow
 end
 
 end
+
+
+
+
+RELEASE 1
+
+
+How to Make filtered coffee Algorithm
+
+
+
+#ON ONE SIDE OF THE ROOM
+two coffee mugs are in the cupboard  
+One is clean
+One is dirty
+
+
+#ON THE OTHER SIDE OF THE ROOM
+Coffee grinder is functional
+else call repair man
+
+Coffee beans are next to Coffee grinder
+else obtain Coffee beans and put them next to Coffee grinder
+
+Filter is in drawer
+else pull it out of drawer and stick it to top of coffee mug
+
+Coffee pot exists next to Coffee beans and is full of hot water
+else buy a coffee pot, fill it with water, put it next to Coffee beans
+
+
+While coffee grinder is functional and is next to coffee beans and coffee pot full of hot water 
+follow the part below
+
+	If two coffee mugs are in the cupboard and any are dirty
+	-	First grab the dirty ones
+	-	Wash them please
+	-	thank you
+	-	put them back in the cupboard
+	-	you're awesome!
+
+	If all mugs are clean grab any coffee mug
+	turn 180 degrees and take two steps forward
+		
+		If coffee beans are next to coffee grinder
+		-	put coffee beans into coffee grinder
+		-	and grind for 20 seconds
+
+		After grinding for 20 seconds put ground coffee into filter on top of cup
+		and check next condition below
+
+		If coffee pot is full of hot water and next to Coffee beans and filter is full of ground coffee 
+		-	pour hot water into filter full of coffee grounds on top of cup
+		-   Wait 5 minutes for coffee to cool down
+
+	Enjoy!
+
+
+
+
+
+
+
+
+
+
