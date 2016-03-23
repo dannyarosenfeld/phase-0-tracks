@@ -10,7 +10,6 @@ while how_loud > 10 || how_loud < 1
 	how_loud = gets.chomp.to_i
 end
 
-
 if how_loud >= 1 || how_loud <= 10
 	puts("Hamster rated #{how_loud} out of 10 in loudness")
 end	
@@ -22,66 +21,34 @@ puts("the hamster's fur color is #{fur}")
 
 puts ("good candidate for adoption(yes, no)?")
 
-yes = "yes"
-no = "no"
+yes_or_no = gets.chomp
 
-yes_or_no = gets.chomp.to_s
 
-while yes_or_no != (yes || no)
+until yes_or_no == "yes" || yes_or_no == "no"
 	puts("please answer yes or no!")
 	yes_or_no = gets.chomp.to_s
-end	
-
-
-if yes_or_no == no
-	puts("Oh well, please come back with a nicer hamster next time!")
-elsif yes_or_no == yes 
-	puts("Yay! we'll take him")
 end
 
-
-
-
-=begin
-until (yes_or_no = "yes" || yes_or_no = "no")
-	puts("please answer yes or no!")
-	yes_or_no = nil
-	yes_or_no = gets.chomp
+if yes_or_no == "no"
+	puts("No? well take him anyway :)")
 end
-
-
 
 if yes_or_no == "yes"
-	puts("Yay! we'll take him")
-elsif yes_or_no == "no"
-	puts("Oh well, please come back with a nicer hamster next time!")
-else
-	puts("you didn't put yes or no!")
-end	
-
-=end
+	puts("Yaay!! sign him up!")
+end
 
 
 puts ("How old is the hamster?")
-age = gets.chomp.to_i
+puts ("give me an integer please")
+age = gets.chomp
 
-while age.is_a?Integer
-	puts ("gimme an integer please!!")
-	age = gets.chomp.to_i
-end
-
-if age.is_a?Integer == false
-	puts("The hamster is #{age} years old")
-end
-
-=begin
-
-if age == ""
-
+if age == "" || age == " "
 	age = nil
-	puts(age)
-else
-	puts("The hamster is #{age} years old")
-
+	puts ("age is set to nil because you didn't enter anything")
+	puts ("give me an integer please")
+	
 end
-=end
+
+age = gets.chomp.to_i
+puts("The hamster is #{age} years old")
+
