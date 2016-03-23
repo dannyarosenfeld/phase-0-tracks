@@ -19,3 +19,9 @@ no = false
 
 puts ("How old is the hamster?")
 age = gets.chomp
+
+if age == ""
+
+	age = nil
+
+end
