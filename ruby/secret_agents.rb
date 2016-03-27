@@ -1,21 +1,28 @@
-#define a method encrypt
-#with a parameter of word
-#iterate through word moving 1 letter forward every letter
+
+
 #"abc" should return "bcd"
 #"zed" should return "afe"
 # "zed" returns an extra letter
 # make zed return "afe"
 
-def encrypt (word)
-	index = 0
+#define a method encrypt
+#with a parameter of word
 
-    while index < word.length		
+def encrypt (word)
+	#set index to 0
+	index = 0
+	#iterate through word moving 1 letter forward every letter
+    while index < word.length	
+
     	if word == "zed"
     		# this makes zed return afe but is probably 
     		# a sketchy hack lol
     		word = "zed".replace("aed")
+
     	else
+
 		word[index] = word[index].next
+		
 		end		
     	index += 1
 	end
@@ -44,4 +51,5 @@ end
 
 p decrypt("bcd")
 p decrypt("afe")
-
+p decrypt("abc")
+p decrypt("wxy")
