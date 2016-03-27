@@ -32,8 +32,8 @@ def encrypt (input)
 end
 
  
- encrypt("abc")
- encrypt("zed")
+ #encrypt("abc")
+ #encrypt("zed")
 
 
 #define a method decrypt
@@ -48,7 +48,8 @@ end
 #add that to the empty string
 #print the string
 
-#add space 
+#fix spacing and capitalization errors with conditionals 
+
  def decrypt (input)
  	index = 0
  	string = ""
@@ -66,10 +67,37 @@ end
  end
 
 
-decrypt("bcd")
-decrypt("afe")
+#decrypt("bcd")
+#decrypt("afe")
+
+#ask for password encryption(agreement)
+puts("Hi, you wanna encrypt/decrypt a password?")
+encrypt_or_decrypt = gets.chomp
+
+puts("okay, give me the pw!")
+password = gets.chomp
+
+
+	if encrypt_or_decrypt == "encrypt"
+	puts("encrypted yay!")
+	p encrypt(password)
+	
+
+	elsif encrypt_or_decrypt == "decrypt"
+	puts("decrypted yay!")
+	p decrypt(password)
+	
+
+	else
+	puts("please enter encrypt or decrypt") 
+	end
+
+
+
+
 
 
 # nested method here
+# fiddled with fixing spacing and downcase issues
+# decrypt(encrypt("The duck flies at midnight"))
 
-decrypt(encrypt("The duck flies at midnight"))
