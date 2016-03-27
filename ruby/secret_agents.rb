@@ -1,5 +1,5 @@
 
-
+=begin
 #"abc" should return "bcd"
 #"zed" should return "afe"
 # "zed" returns an extra letter
@@ -22,7 +22,7 @@ def encrypt (word)
     	else
 
 		word[index] = word[index].next
-		
+
 		end		
     	index += 1
 	end
@@ -53,3 +53,65 @@ p decrypt("bcd")
 p decrypt("afe")
 p decrypt("abc")
 p decrypt("wxy")
+=end
+
+
+
+#define a method encrypt
+#with a parameter of input
+#set index to 0
+#create placeholder string with ""
+#iterate through word moving 1 letter forward every letter
+#set each_letter to index of input with .next method
+#increment inde by 1
+#add each letter to string
+#print string
+def encrypt (input)
+	index = 0
+	string = ""
+	while index < input.length
+=begin
+    	if input[index] == "z"
+             #returning aafe instead of afe for some reason
+             #don't know why
+    		input[index] = "a"
+    	else
+=end
+		each_letter = input[index].next
+		string += each_letter
+		#end
+		index += 1
+	end
+	p string
+end
+
+ 
+ encrypt("abc")
+ encrypt("zzed")
+
+
+#define a method decrypt
+#with parameter of input
+#set index to 0
+#create placeholder string with ""
+#create alphabet variable
+#iterate through word moving 1 letter backwards every letter
+#set each_letter to index of input with .next method
+
+ def decrypt (input)
+ 	index = 0
+ 	string = ""
+ 	a_to_z = "abcdefghijklmnopqrstuvwxyz"
+ 	while index < input.length
+ 		each_letter = a_to_z.index(input[index])
+
+ 		string += a_to_z[each_letter - 1]
+ 		index += 1
+ 	end
+ 	p string
+ end
+
+
+decrypt("bcd")
+decrypt("afe")
+
