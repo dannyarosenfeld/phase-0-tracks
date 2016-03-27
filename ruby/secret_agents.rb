@@ -66,20 +66,23 @@ p decrypt("wxy")
 #increment inde by 1
 #add each letter to string
 #print string
+
+#lastly add conditional statement 
+#if number of input is equal to "z"
+#modify string to use 1 a instead of 2
+#else continue as usual
+
 def encrypt (input)
 	index = 0
 	string = ""
 	while index < input.length
-=begin
-    	if input[index] == "z"
-             #returning aafe instead of afe for some reason
-             #don't know why
-    		input[index] = "a"
-    	else
-=end
+	
+		if input[index] == "z"
+			string += "a"
+		else		
 		each_letter = input[index].next
 		string += each_letter
-		#end
+		end
 		index += 1
 	end
 	p string
@@ -87,7 +90,7 @@ end
 
  
  encrypt("abc")
- encrypt("zzed")
+ encrypt("zed")
 
 
 #define a method decrypt
@@ -95,8 +98,12 @@ end
 #set index to 0
 #create placeholder string with ""
 #create alphabet variable
-#iterate through word moving 1 letter backwards every letter
-#set each_letter to index of input with .next method
+#loop through word moving 1 letter backwards every letter
+#create variable each_letter and set it to
+#the alphabet with .index(the current letter of input)
+#subtract 1 from the alphabet letter number a_to_z[each_letter - 1]
+#add that to the empty string
+#print the string
 
  def decrypt (input)
  	index = 0
