@@ -1,5 +1,3 @@
-
-
 #define a method encrypt
 #with a parameter of input
 #set index to 0
@@ -23,8 +21,8 @@ def encrypt (input)
 		if input[index] == "z"
 			string += "a"
 		else		
-		each_letter = input[index].next
-		string += each_letter
+			each_letter = input[index].next
+			string += each_letter
 		end
 		index += 1
 	end
@@ -34,7 +32,6 @@ end
  
  #encrypt("abc")
  #encrypt("zed")
-
 
 #define a method decrypt
 #with parameter of input
@@ -58,8 +55,8 @@ end
  		if input[index] == "a"
  			string += "z"
  		else
- 		each_letter = a_to_z.index(input[index].downcase)
- 		string += a_to_z[each_letter - 1]
+	 		each_letter = a_to_z.index(input[index].downcase)
+	 		string += a_to_z[each_letter - 1]
  		end
  		index += 1
  	end
@@ -71,30 +68,33 @@ end
 #decrypt("afe")
 
 #ask for password encryption(agreement)
-puts("Hi, you wanna encrypt/decrypt a password?")
-encrypt_or_decrypt = gets.chomp
+#set answer to gets.chomp
+#ask for pass
+#set pass to gets.chomp
+#add conditionals to check for answer
+#if not encrypt/decrypt tell them to try again
 
-puts("okay, give me the pw!")
-password = gets.chomp
+loop do
+	puts("Hi, you wanna encrypt/decrypt a password?")
+	encrypt_or_decrypt = gets.chomp
 
+	puts("okay, give me the pw!")
+	password = gets.chomp
 
 	if encrypt_or_decrypt == "encrypt"
-	puts("encrypted yay!")
-	p encrypt(password)
-	
+		puts("encrypted yay!")
+		p encrypt(password)
+		break
 
 	elsif encrypt_or_decrypt == "decrypt"
-	puts("decrypted yay!")
-	p decrypt(password)
-	
+		puts("decrypted yay!")
+		p decrypt(password)
+		break
 
 	else
-	puts("please enter encrypt or decrypt") 
-	end
-
-
-
-
+		puts("please enter encrypt or decrypt") 
+		end
+end
 
 
 # nested method here
