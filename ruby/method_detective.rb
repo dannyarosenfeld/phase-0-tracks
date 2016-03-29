@@ -10,10 +10,11 @@
 # “zom”.<???>
 # => “zoom”
 
-# “enhance”.<???>
+
+p "enhance".center(15)
 #=> “    enhance    ”
 
-# “Stop! You’re under arrest!”.<???>
+p "Stop! You're under arrest!".upcase!
 # => “STOP! YOU’RE UNDER ARREST!”
 
 # “the usual”.<???>
