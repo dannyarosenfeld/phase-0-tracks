@@ -8,17 +8,53 @@
 design_hash = {}
 
 puts "give name"
-name = gets.chomp
+name = gets.chomp.to_s
 
 puts "give age"
-age = gets.chomp
+age = gets.chomp.to_i
 
 puts "# of children"
-num_children = gets.chomp
+num_children = gets.chomp.to_i
 
 puts "decor theme"
-decor = gets.chomp
+decor = gets.chomp.to_s
 
 puts "phone number"
-phone_num = gets.chomp
+phone_num = gets.chomp.to_i
 
+design_hash = {
+	name: name,
+	age: age,
+	num_children: num_children,
+	decor: decor,
+	phone_num: phone_num
+}
+
+
+p design_hash
+
+puts "would you like to update a key?"
+puts "enter either name, age, num_children, decor, phone_num"
+answer = design_hash[gets.chomp.to_sym]
+
+case answer
+
+when answer = design_hash[:none]
+	puts "Okay thanks for adding stuff to the hash!"
+	p design_hash
+
+when answer = design_hash[:name]
+	puts "change value of :name"
+	design_hash[:name] = gets.chomp.to_sym
+	p design_hash
+
+
+when answer = design_hash[:age]
+	puts "change value of :age"
+	design_hash[:age] = gets.chomp.to_sym
+	p design_hash
+	
+else
+	puts "Okay thanks for adding stuff to the hash!"
+	p design_hash
+end
