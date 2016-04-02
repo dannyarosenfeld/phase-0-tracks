@@ -87,3 +87,14 @@ num_hash.select! {|word, num| num%3 == 0}
 p num_hash
 
 
+puts"reject method"
+puts "***********************"
+
+p num_ary
+num_ary.reject! {|num| num < 6}
+p num_ary
+
+
+p num_hash
+num_hash.reject! {|word, num| num < 6}
+p num_hash
