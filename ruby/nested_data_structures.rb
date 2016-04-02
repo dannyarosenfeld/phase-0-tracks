@@ -84,6 +84,30 @@ hour_fitness = {
 
 p hour_fitness
 puts "**********************"
-puts "Push all this stuff"
-	hour_fitness[:Front_Desk].push("blah")
+
+puts "add population key with value to Machine Area hash"
+	hour_fitness[:Machine_Area][:Population] = 88
 p hour_fitness
+
+
+puts "**********************"
+puts "Push string to Equipment Array at Front Desk"
+	hour_fitness[:Front_Desk][:Equipment].push("Membership Database Software")
+p hour_fitness
+
+puts "**********************"
+puts "replace entire Locker_Room hash with Cleanliness: 'Low'"
+	hour_fitness[:Locker_Room].replace({:Cleanliness => "Low"})
+p hour_fitness
+
+puts "**********************"
+puts "Delete key/value for Employees hash in Spinning_Room if not equal to Cleaners"
+	hour_fitness[:Spinning_Room][:Employees].delete_if {|type,num| type != :Cleaners}
+p hour_fitness
+
+puts "**********************"
+puts "Select and return employee entries greater than 0 for Front_Desk"
+	hour_fitness[:Front_Desk][:Employees].select! {|type,num| num > 0}
+p hour_fitness
+
+
