@@ -1,69 +1,41 @@
-#write a method that loops through every consonant letter of the alphabet
-#and returns the next consonant
+def next_vowel(input)
+vowels = "aeiou"
+string = ""
+string = vowels.chars.rotate.join('')
+end
 
-#write a method that loops through every vowel
-#and returns the next vowel
+p next_vowel("aeiou")
+
 =begin
-def consonants
-	alphabet = "bcdfghjklmnpqrstvwxyz"
-	index = 0
-	string = ""
-	while index < alphabet.length	
-		letters = alphabet[index].next
-		index += 1
-		string += letters
-		
-	end
-	string
-end
 
 
-def vowel(letter)
-alphabet = "aeiou"
-current_letter = alphabet.index(letter) + 1
-alphabet[current_letter]
-end
-
-
-def decrypt(word)
-	index = 0
-	string = ""
-
-	while index < word.length
-		char = word[index]
-		index += 1
-		string += vowel(char)
-	end
-	string
-end
-
-
-decrypt("aeiou")
-
-=end
-
-
-
+#create method for iterating through vowels
 def vowel(letter)
 vowels = "aeiou"
 current_id = vowels.index(letter)
 next_vowel = vowels[current_id + 1]
 end
 
-
-
+#create method for iterating through consonants
 def consonant(letter)
 alphabet = "bcdfghjklmnpqrstvwxyz"
 current_id = alphabet.index(letter)
 next_consonant = alphabet[current_id + 1]
 end
 
+#define method that implements previous methods
+# define alphabet and vowels
+#set new_string to value of empty string
+
 def swap(word)
 	alphabet = "bcdfghjklmnpqrstvwxyz"
 	vowels = "aeiou"
 	new_string = ""
-	index = 0
 
+	#break input word into array and iterate through each letter
+	#if the letter is a vowel, take it and change it to next_vowel
+	#if the letter is a consonant, take it and change it to consonant
+	#else just add with no modification
 	word.split('').each do |letter|
 		if vowels.include?(letter)
 			new_string += vowel(letter)
@@ -74,6 +46,7 @@ def swap(word)
 		end
 	end
 
+	#transform this new string into an array
 	new_word = new_string.split(' ')
 	p word
 	#swap first and second word in array
@@ -84,36 +57,6 @@ def swap(word)
 
 
 
-p swap("bob saggot")
-
-# puts decrypt("aeiou")
-
-
-
-
-=begin
-
-
-def fake_name(full_name)
-	new_name = ""
-	vowels = "aeioua"
-	cons = "bcdfghjklmnpqrstvwxyzb"
-	full_name.chars.each do |letter|
-		if vowels.include?(letter)
-			new_name << vowels[vowels.index(letter.downcase)+1]
-		elsif cons.include?(letter)
-			new_name << cons[cons.index(letter.downcase)+1]
-		else
-			new_name << letter
-		end
-	end
-	name_array = new_name.split(" ")
-	name_array.reverse!
-	new_name = name_array.map(&:capitalize).join(" ")
-end
-
-
-p fake_name("bob saggot")
-
+p swap("felicia torres")
 
 =end
