@@ -46,15 +46,27 @@ decrypt("aeiou")
 
 def vowel(letter)
 vowels = "aeiou"
-each_id = vowels.index(letter)
-next_vowel = vowels[each_id + 1]
+string = ""
+index = 0
+while index < letter.length
+char = letter[index]
+current_id = vowels.index(letter)
+next_vowel = vowels[current_id - 1]
+string += next_vowel
+index += 1
+
+end
+string
+
 end
 
+p vowel("aeiou")
 
 def consonant(letter)
+
 alphabet = "bcdfghjklmnpqrstvwxyz"
-each_id = alphabet.index(letter)
-next_consonant = alphabet[each_id + 1]
+current_id = alphabet.index(letter)
+next_consonant = alphabet[current_id + 1]
 end
 
 def swap(word)
@@ -65,29 +77,26 @@ def swap(word)
 
 	word.split('').each do |letter|
 		if vowels.include?(letter)
-			
 			new_string += vowel(letter)
-		
 		elsif alphabet.include?(letter)
-			
 			new_string +=  consonant(letter)
 		else
 			new_string += letter
 		end
 	end
 
-
-
 	new_word = new_string.split(' ')
 	p word
+	#swap first and second word in array
 	new_word[0], new_word[1] = new_word[1], new_word[0]
+	#turn new word into string
 	new_string = new_word.join(" ")
 	
 	end
 
 
 
-p swap("bob saggot")
+#p swap("bob saggot")
 
 # puts decrypt("aeiou")
 
