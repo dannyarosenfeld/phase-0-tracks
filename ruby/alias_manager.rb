@@ -42,21 +42,22 @@ decrypt("aeiou")
 
 =end
 
+
+
 def vowel(letter)
 vowels = "aeiou"
-each_id = vowels[vowels.index(letter) + 1]
-
+each_id = vowels.index(letter)
+next_vowel = vowels[each_id + 1]
 end
 
 
-def alphabet(letter)
+def consonant(letter)
 alphabet = "bcdfghjklmnpqrstvwxyz"
-each_id = alphabet[alphabet.index(letter) + 1]
-
+each_id = alphabet.index(letter)
+next_consonant = alphabet[each_id + 1]
 end
 
 def swap(word)
-
 	alphabet = "bcdfghjklmnpqrstvwxyz"
 	vowels = "aeiou"
 	new_string = ""
@@ -69,7 +70,7 @@ def swap(word)
 		
 		elsif alphabet.include?(letter)
 			
-			new_string +=  alphabet(letter)
+			new_string +=  consonant(letter)
 		else
 			new_string += letter
 		end
