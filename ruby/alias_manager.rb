@@ -30,25 +30,28 @@ def decrypt(word)
 	string = ""
 
 	while index < word.length
-
 		char = word[index]
 		index += 1
 		string += vowel(char)
-
 	end
 	string
-
-
 end
 
 
 
-puts decrypt("aeiou")
 
 
+def swap(word)
+	
+	word = word.split(' ')
+	p word
+	word[0], word[1] = word[1], word[0]
+	word.join(' ')
+end
 
 
-
+# puts decrypt("aeiou")
+puts swap("ball sack")
 
 
 
