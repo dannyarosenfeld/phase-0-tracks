@@ -46,24 +46,13 @@ decrypt("aeiou")
 
 def vowel(letter)
 vowels = "aeiou"
-string = ""
-index = 0
-while index < letter.length
-char = letter[index]
 current_id = vowels.index(letter)
-next_vowel = vowels[current_id - 1]
-string += next_vowel
-index += 1
-
-end
-string
-
+next_vowel = vowels[current_id + 1]
 end
 
-p vowel("aeiou")
+
 
 def consonant(letter)
-
 alphabet = "bcdfghjklmnpqrstvwxyz"
 current_id = alphabet.index(letter)
 next_consonant = alphabet[current_id + 1]
@@ -91,12 +80,11 @@ def swap(word)
 	new_word[0], new_word[1] = new_word[1], new_word[0]
 	#turn new word into string
 	new_string = new_word.join(" ")
-	
 	end
 
 
 
-#p swap("bob saggot")
+p swap("bob saggot")
 
 # puts decrypt("aeiou")
 
