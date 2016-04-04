@@ -1,26 +1,17 @@
-def next_vowel(input)
-vowels = "aeiou"
-string = ""
-string = vowels.chars.rotate.join('')
-end
-
-p next_vowel("aeiou")
-
-=begin
-
-
 #create method for iterating through vowels
 def vowel(letter)
 vowels = "aeiou"
-current_id = vowels.index(letter)
-next_vowel = vowels[current_id + 1]
+vowels2 = vowels.chars.rotate.join('')
+each_id = vowels.index(letter.downcase)
+next_vowel = vowels2[each_id]
 end
 
 #create method for iterating through consonants
 def consonant(letter)
 alphabet = "bcdfghjklmnpqrstvwxyz"
-current_id = alphabet.index(letter)
-next_consonant = alphabet[current_id + 1]
+alphabet2 = alphabet.chars.rotate.join('')
+each_id = alphabet.index(letter.downcase)
+next_consonant = alphabet2[each_id]
 end
 
 #define method that implements previous methods
@@ -50,13 +41,18 @@ def swap(word)
 	new_word = new_string.split(' ')
 	p word
 	#swap first and second word in array
-	new_word[0], new_word[1] = new_word[1], new_word[0]
+	#new_word[0], new_word[1] = new_word[1], new_word[0]
+	new_word.reverse!
 	#turn new word into string
-	new_string = new_word.join(" ")
+	
+	
+	#new_word.map {|names| names.capitalize}
+	
+	new_string = new_word.map(&:capitalize).join(" ")
+	
 	end
 
 
 
-p swap("felicia torres")
+p swap("Felicia Torres")
 
-=end
