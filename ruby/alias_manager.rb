@@ -1,17 +1,18 @@
+
 #create method for iterating through vowels
 def vowel(letter)
-vowels = "aeiou"
-vowels2 = vowels.chars.rotate.join('')
-each_id = vowels.index(letter.downcase)
-next_vowel = vowels2[each_id]
+	vowels = "aeiou"
+	vowels2 = vowels.chars.rotate.join('')
+	each_id = vowels.index(letter.downcase)
+	next_vowel = vowels2[each_id]
 end
 
 #create method for iterating through consonants
 def consonant(letter)
-alphabet = "bcdfghjklmnpqrstvwxyz"
-alphabet2 = alphabet.chars.rotate.join('')
-each_id = alphabet.index(letter.downcase)
-next_consonant = alphabet2[each_id]
+	alphabet = "bcdfghjklmnpqrstvwxyz"
+	alphabet2 = alphabet.chars.rotate.join('')
+	each_id = alphabet.index(letter.downcase)
+	next_consonant = alphabet2[each_id]
 end
 
 #define method that implements previous methods
@@ -38,22 +39,22 @@ def aliass(full_name)
 	#transform this new string into an array
 	new_word = new_string.split(' ')
 	#swap first and second word in array
-	#new_word[0], new_word[1] = new_word[1], new_word[0]
 	new_word.reverse!
 	#turn new word into string
 	new_word.map {|names| names.capitalize!}
 	new_string = new_word.join(" ")
-	end
+end
 #create empty array outside of loop
 agent_list = []
 
 loop do
-puts ("enter your name")
-answer = gets.chomp
-break if answer == "quit"
-#feed into array
-agent_list << "#{answer} is the real name of #{p aliass(answer)}"
+	puts ("enter your name")
+	answer = gets.chomp
+	break if answer == "quit"
+	#feed into array
+	agent_list << "#{answer} is the real name of #{p aliass(answer)}"
 end
 
 p aliass("felicia torres")
 p agent_list.join(" ")
+
