@@ -48,7 +48,7 @@ end
 agent_list = []
 
 loop do
-	puts ("enter your name")
+	puts ("enter your names you want to alias, type 'quit' when finished")
 	answer = gets.chomp
 	break if answer == "quit"
 	#feed into array
