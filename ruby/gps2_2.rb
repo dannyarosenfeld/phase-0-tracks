@@ -1,23 +1,13 @@
-# Method to create a list
-# input: string of items separated by spaces (example: "carrots apples cereal pizza")
-# steps: 
-  # Step one: def method call = create_items("item") Step 2: declare varible grcy_array = item.split(' ') Step 3: Create empty hash grcy
-  #Step 4: Take each item of array assign to key of grcy_hash with value -1
-  # set default quantity = 1
-  # print the list to the console [can you use one of your other methods here?] 
-# output: [what data type goes here, array or hash?] hash
-
-
-def create_times(item)
-		grcy_array = item.split(" ")
-		grcy_hash = {}
-		grcy_array.map do |item|
-			grcy_hash[item] = 0
-		end
-		grcy_hash
+def create_items(item)
+ 	grcy_array = item.split(" ")
+ 	grcy_hash = {}
+ 	grcy_array.map do |item|
+ 	grcy_hash[item] = 0
+ 	end
+ 	grcy_hash
 end
 
-p create_times("carrots potatoes tomatoes straweberrits")
+p create_items("carrots potatoes tomatoes straweberrits")
 
 
 # Method to add an item to a list
@@ -26,21 +16,33 @@ p create_times("carrots potatoes tomatoes straweberrits")
 #step1: define method add_item with parameters item and qty
 #step2: make item hash key with value of qty
 # output:
+new_grcy_hash = create_items("carrots potatoes tomatoes straweberrits")
 
-def add_item(item, qty)
- grcy_hash = create_times("carrots potatoes tomatoes straweberrits")
+def add_item(grcy_hash, item, qty)
+ grcy_hash
  grcy_hash[item.to_sym] = qty.to_i
  grcy_hash
 end
 
-p add_item("carrots", 2)
+p add_item(new_grcy_hash, "carrtos", 2)
 
 
 
 # Method to remove an item from the list
 # input:
-# steps:
+# steps: def a method remove_item parm of item, then set item as key of grcy_hash, then run delete method
+# then return the hash
 # output:
+
+new_grcy_hash2 = add_item(new_grcy_hash, "carrtos", 2)
+
+def remove_item(grcy_hash, item)
+ grcy_hash.delete(item)
+ grcy_hash
+end
+
+p remove_item(new_grcy_hash2, "potatoes")
+
 
 # Method to update the quantity of an item
 # input:
