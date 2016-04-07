@@ -97,3 +97,23 @@ p add_item(new_grcy_hash, "ice cream", 4)
 p remove_item(new_grcy_hash2, "lemonade")
 p qty_change(new_grcy_hash3, "ice cream", 1)
 p grcy_list(new_grcy_hash4)
+
+
+=begin
+What did you learn about pseudocode from working on this challenge?
+That it's better to be less specific and more broad about what you want to code.
+What are the tradeoffs of using arrays and hashes for this challenge?
+a hash allowed us to have both the quantity and the grocery item.  
+We used arrays to break the string and create hash keys with default values
+What does a method return?
+either what it updated, or the hash if we make it return the hash.
+What kind of things can you pass into methods as arguments?
+we learned how to pass hashes as arguments
+How can you pass information between methods?
+by storing them in variables and creating new parameters for those variables
+What concepts were solidified in this challenge, and what concepts are still confusing?
+Still have alot to learn about scope.  I didn't know that I couldnt just create a hash outside of methods
+and not be able to access it.
+=end
+
+
