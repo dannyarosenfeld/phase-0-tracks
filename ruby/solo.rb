@@ -84,4 +84,7 @@ loop do
 end
 
 puts "hope you had fun creating dogs and running the pet method!"
-p doggies
+
+doggies.each do |dog|
+puts "you made a dog named #{dog.name} who is #{dog.age_dog_years} in dog years! #{dog.name}'s fur is #{dog.fur_type} and he/she has #{dog.fur_length}"
+end
