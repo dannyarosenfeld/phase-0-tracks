@@ -1,10 +1,10 @@
 #create a class called SmallDog
-#set attribute reader to gender, fur length, and fur type
-#set attribute accessor to breed, and age
-#define initialize method with one paramater dog list and set an instance variable to that param
+#set attribute reader to fur length, and fur type
+#set attribute accessor to name, and age in dog years
+#define initialize method with one paramaters name and age and set instance variables to those params
+#define instance variables that use arrays and can select random data from those arrays
 #define get dog_list method that returns doglist
-#define a method called pet_dog return the fur length is fur type(i.e. soft)
-#define method to convert age to dog years(dogs should be age 1-10 in human years)
+#define a method called pet_dog which returns a string using instance variables
 
 class SmallDog
 	attr_reader :fur_length, :fur_type 
@@ -46,6 +46,15 @@ dog5.pet_dog
 dog6.pet_dog
 p dog1
 =end
+
+#create new array to store instances called doggies outside of loop
+#loop through input to get name and age of new instance
+#if age < 10 prompt for input again
+#run pet dog method if they want to pet dog
+# else give them interesting response including attr accessors
+# when user types 'done' exit loop and print a string using a block which includes the attributes of the
+# -instance they created
+
 doggies = []
 
 loop do
