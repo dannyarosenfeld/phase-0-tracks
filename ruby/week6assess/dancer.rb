@@ -34,7 +34,7 @@ class Dancer
 	end
 
 	def begin_next_dance
-		new_card = @card.shift
+		new_card = @card.delete(@card[0])
 		p "Now dancing with #{new_card}."
 	end
 
