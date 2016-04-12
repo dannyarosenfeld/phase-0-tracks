@@ -396,7 +396,7 @@ STATE_DATA = {
   "Wyoming" => {population_density: 5.851, population: 576412}
 }
 
-#jen gilbert class solo
+#jen gilbert class solo each_with_index
 #*****************************************************************************
 
 
@@ -846,3 +846,141 @@ dissatisfied_customer = DissatisfiedCustomer.new("jane")
 puts angry_guy.name + " " + angry_guy.yell_loud("Life is annoying!!")
 
 puts dissatisfied_customer.name + " " + dissatisfied_customer.yell_loud("I'm allergic to this product!!")
+
+
+#Grocery hash gps
+#***********************************************************************************
+#***********************************************************************************
+
+# Method to create a list
+# input: string of items separated by spaces (example: "carrots apples cereal pizza")
+# steps: 
+# Step one: def method call = create_items("item") Step 2: declare varible grcy_array = item.split(' ') Step 3: Create empty hash grcy
+#Step 4: Take each item of array assign to key of grcy_hash with value 0
+# set default quantity = 0
+# print the list to the console [can you use one of your other methods here?] 
+# output: [what data type goes here, array or hash?] hash
+
+def create_items(item)
+    grcy_array = item.split(" ")
+    grcy_hash = {}
+    grcy_array.map do |item|
+    	grcy_hash[item] = 0
+    end
+    grcy_hash
+end
+
+p create_items("carrots potatoes tomatoes straweberrits")
+new_grcy_hash = create_items("carrots potatoes tomatoes straweberrits")
+
+def add_item(grcy_hash, item, qty)
+	grcy_hash
+	grcy_hash[item.to_sym] = qty.to_i
+	grcy_hash
+end
+
+p add_item(new_grcy_hash, "carrtos", 2)
+new_grcy_hash2 = add_item(new_grcy_hash, "carrtos", 2)
+
+def remove_item(grcy_hash, item)
+	grcy_hash.delete(item.to_sym)
+	grcy_hash
+end
+
+p remove_item(new_grcy_hash2, "potatoes")
+new_grcy_hash3 = remove_item(new_grcy_hash2, "potatoes")
+
+def qty_change(grcy_hash, item, qty)
+	grcy_hash.delete(item)
+    grcy_hash[item.to_sym] = qty.to_i
+    grcy_hash
+end
+
+p qty_change(new_grcy_hash3, "tomatoes", 3)
+new_grcy_hash4 = qty_change(new_grcy_hash3, "tomatoes", 3)
+
+def grcy_list(grcy_list)
+	grcy_list.each do |item, qty|
+	    puts "We need #{qty} #{item}"
+	end
+end
+
+
+#########
+
+p add_item(new_grcy_hash, "lemonade", 2)
+p add_item(new_grcy_hash, "onion", 1)
+p qty_change(new_grcy_hash3, "tomatoes", 3)
+p add_item(new_grcy_hash, "ice cream", 4)
+p remove_item(new_grcy_hash2, "lemonade")
+p qty_change(new_grcy_hash3, "ice cream", 1)
+p grcy_list(new_grcy_hash4)
+
+
+
+
+#Nested data example
+#***********************************************************************************
+#***********************************************************************************
+
+
+airplane = {
+    first_class: {
+        pretty_name: 'First Class',
+        seat_info: {
+            total_seats: 6,
+            seats_available: 4
+        },
+        meals: [
+            "Leg of Pampered Lamb", 
+            "Kale Salad"
+        ]
+    },
+    business_class: {
+        pretty_name: 'Business Class',
+        seat_info: {
+            total_seats: 12,
+            seats_available: 9
+        },
+        meals: [
+            "Sustainably Cultivated Lobster with Housemade Butter", 
+            "Kale Salad"
+        ]
+    },
+    coach: {
+        pretty_name: 'Coach',
+        seat_info: {
+            total_seats: 50,
+            seats_available: 23
+        },
+        meals: []
+    }
+}
+
+# 1.
+# Guess the return value of this line:
+
+# airplane[:first_class][:pretty_name]
+
+# Then uncomment the line above and check your guess.
+
+# 2.
+# Guess the return value of this line:
+
+# airplane[:business_class][:meals]
+
+# Then uncomment the line above and check your guess.
+
+# 3.
+# Guess the return value of this line:
+
+# airplane[:business_class][:meals][1]
+
+# Then uncomment the line above and check your guess.
+
+# 4.
+# How will this line affect the data structure?
+
+# airplane[:coach][:meals].push("Sad Plastic Tray of Corn")
+
+
