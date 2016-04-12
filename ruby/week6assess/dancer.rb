@@ -3,6 +3,7 @@ class Dancer
 	def initialize(name, age)
 		@name = name.to_s
 		@age = age.to_i
+		@card = []
 	end
 
 	def name
@@ -24,21 +25,21 @@ class Dancer
 
 
 	def queue_dance_with(partner)
-		@partner = partner
-		@ary = @ary.to_a.push @partner
+		@card << partner.to_s
 	
 	end
 
 	def card	
-		@ary
+		@card
 	end
 
 	def begin_next_dance
-		p "Now dancing with #{@ary[0]}."
+		new_card = @card.delete(@card[0])
+		p "Now dancing with #{new_card}."
 	end
 
 	def limit(num)
-		if @ary.length < num
+		if @card.length < num
 			p "card contains less than #{num}"
 		else
 			p "Oh, no! card contains more than #{num}"
