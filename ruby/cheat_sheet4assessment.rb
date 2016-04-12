@@ -154,3 +154,102 @@ class Dancer
 		end
 	end
 end
+
+
+
+#basic encrypt decrypt
+#******************************************************************************
+
+
+def encrypt(word)
+index = 0
+string = ""
+
+	while index < word.length
+		string += word[index].next
+		index += 1
+	end
+string
+
+end
+
+
+
+p encrypt("blahblahblah")
+
+=begin
+def decrypt(letter)
+	string = "abcdefghijklmnopqrstuvwxyz"
+	string1 = ""
+	each_id = string[string.index(letter) - 1]
+	prev_lett = string[each_id]
+end
+=end
+
+def decrypt(word)
+	index = 0
+	string = "abcdefghijklmnopqrstuvwxyz"
+	string1 = ""
+	while index < word.length
+		each_id = string[string.index(word[index]) - 1]
+		prev_lett = string[each_id]
+		string1 += prev_lett
+		index += 1
+	end
+string1
+end
+
+
+p decrypt("blahblahblah")
+
+
+
+
+
+#method blocks
+#***********************************************************************************
+
+def hello_fr_inside 
+  puts "start of method"
+  yield("mike","danny")
+  puts "end of method"
+end
+
+
+hello_fr_inside {|name1, name2| puts "#{name1} and #{name2} passed into the method"}
+
+
+puts" delete if method"
+puts "***********************"
+p num_ary
+num_ary.delete_if {|num| num < 3}
+p num_ary
+
+
+p num_hash
+num_hash.delete_if {|word, num| num < 3 }
+p num_hash
+
+
+puts"keep if method"
+puts "***********************"
+p num_ary
+num_ary.keep_if {|num| num < 7}
+p num_ary
+
+
+p num_hash
+num_hash.keep_if {|word, num| num < 7 }
+p num_hash
+
+
+puts"select method"
+puts "***********************"
+p num_ary
+num_ary.select! {|num| num%3 == 0}
+p num_ary
+
+
+p num_hash
+num_hash.select! {|word, num| num%3 == 0}
+p num_hash
