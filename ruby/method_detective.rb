@@ -34,9 +34,11 @@ p "Elementary  ,    my   dear      Watson!".squeeze
 # => “Elementary, my dear Watson!”
 
 p "z".ord
+
 # => 122 
 # (What is the significance of the number 122 in relation to the character z?)
 p "it's the integer ordinal of 'z'"
+
 
 p "How many times does the letter ‘a’ appear in this string?".count "a"
 #=> 4
