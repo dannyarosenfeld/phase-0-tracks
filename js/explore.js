@@ -9,19 +9,18 @@ outside of the function call the function inside of a console log statement
 */
 
 function reverse(word){
-	var a = '';
-	
+	var string = '';
 	for(var i = word.length; i>=0; i--){
-		a += word[i];
-		
+		string += word[i];
 	}
-	word = a
-	console.log(typeof word);
-	return word
+	return string;
 }
 
- console.log("blah" + reverse("akunamatata"));
+var reverseAbcd = reverse("abcd");
 
-
-
- console.log("blah");
+	if (1 == 1){
+	 	console.log(reverseAbcd);
+	}
+	else{
+		console.log("abcd")
+	}
