@@ -10,13 +10,13 @@ outside of the function call the function inside of a console log statement
 
 function reverse(word){
 	var string = '';
-	for(var i = word.length; i>=0; i--){
+	for(var i = word.length - 1; i>=0; i--){
 		string += word[i];
 	}
 	return string;
 }
 
-var reverseAbcd = reverse("abcd");
+var reverseAbcd = reverse("akunamatata");
 
 	if (1 == 1){
 	 	console.log(reverseAbcd);
