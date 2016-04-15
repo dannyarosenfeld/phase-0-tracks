@@ -1,35 +1,27 @@
-//create function taking array of words that returns the longest word in the array
 /*
-function longest(ary){
-	for (i = 0; i < ary.length; i++){
-		if (ary[i].length > 5){
-			console.log(ary[i]);
-		}
-		else if (ary[i].length > 2){
-			console.log(ary[i]);
-		}
-		else{
-			i--
-		}
-
-	}
-
-}
-
-
-console.log(longest(["aaa", "aa", "ggg","bbbbb", "ccccccccccc"]))
+create a function called findLongest with an array as a param
+set variable length to zero
+set variable word to nil
+loop through each item of array
+if the length of array item is greater than var length which has been set to 0
+set var length to length of array item and set word to word item
+console log the result of the function
 */
 
-function(ary){
-	var longest = 0;
+function findLongest(ary){
+	var length = 0;
 	var word;
-	for(i = 0; i < ary.length; i++){
-		if (ary[i].length > longest){
-			longest = ary[i].length;
-			word = ary[i]
-			console.log(word)
-
+	for (var i = 0; i < ary.length; i++){
+		if (ary[i].length > length){
+			var length = ary[i].length;
+			var word = ary[i];
+			
 		}
-
 	}
+	console.log(word);
 }
+
+findLongest(["small string", "medium string", "longest craziest string ever", "string"])
+
+/*FIRST LOOP
+ary[0] > 12*/
