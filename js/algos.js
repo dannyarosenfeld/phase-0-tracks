@@ -10,18 +10,41 @@ console log the result of the function
 
 function findLongest(ary){
 	var length = 0;
-	var word;
+	var longestWord;
 	for (var i = 0; i < ary.length; i++){
 		if (ary[i].length > length){
 			var length = ary[i].length;
-			var word = ary[i];
+			var longestWord = ary[i];
 			
 		}
 	}
-	console.log(word);
+	console.log(longestWord);
 }
 
-findLongest(["small string", "medium string", "longest craziest string ever", "string"])
+findLongest(["small string", "longest craziest string", "medium string", "string"])
 
 /*FIRST LOOP
-ary[0] > 12*/
+ary[0] > 0 evaluates to true
+length = 12
+word = "small string"
+
+SECOND LOOP
+ary[1] > 12 evaluates to true
+length = 24
+word = "longest craziest string"
+
+THIRD LOOP
+ary[2] > 13 evaluates to false
+length is still 24
+word is still "longest craziest string"
+
+LAST LOOP
+ary[3] > 13 evaluates to false
+length is still 24
+word is still "longest craziest string"
+
+Console log returns "longest craziest string"
+*/
+
+
+
