@@ -81,14 +81,17 @@ function makeArray(integer){
 	var string = "";
 	var ary = [];
 
+	
 	for (i = 0; i < (Math.floor(Math.random() * 10 + 1)); i++ ){
-	var randomLetter = possible[Math.floor(Math.random() * possible.length)];
-	string += randomLetter;
-	}
+		var randomLetter = possible[Math.floor(Math.random() * possible.length)];
+		string += randomLetter;
+		}
+
 
 	for (i = 0; i < integer; i++){
+		
+			
 		ary.push(string);
-
 	}
 	return ary;
 
