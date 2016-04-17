@@ -46,5 +46,58 @@ word is still "longest craziest string"
 Console log returns "longest craziest string"
 */
 
+/*declare a function with two parameters
+each of them should be objects
+within the function iterate through one of the object params keys to see if it shares any key-value pairs with the second
+If it does, return true.
+If it doesn't share any keys with the second object return false.
+*/
+
+
+function matches(obj1, obj2){
+
+	for(var key in obj1){
+		if(obj1[key] == obj2[key]){
+			return true;
+		}
+	}
+	return false;
+}
+
+
+
+//test to make sure matches are strictly key-value pairs not just keys or values.
+console.log(matches({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
+console.log(matches({name: "Steven", year: 90}, {name: "Tamir", age: 54}));
+console.log(matches({name: "Steven", year: 54}, {name: "Tamir", age: 54}));
+
+/*declare a function makeArray with param integer
+The integer should be the number of items in an array the function creates
+define a string of possible characters
+
+*/
+function makeArray(integer){
+	var possible = "abcdefghijkl";
+	var string = "";
+	var ary = [];
+
+	for (i = 0; i < (Math.floor(Math.random() * 10 + 1)); i++ ){
+	var randomLetter = possible[Math.floor(Math.random() * possible.length)];
+	string += randomLetter;
+	}
+
+	for (i = 0; i < integer; i++){
+		ary.push(string);
+
+	}
+	return ary;
+
+}
+	console.log(makeArray(8));
+
+
+
+
+
 
 
