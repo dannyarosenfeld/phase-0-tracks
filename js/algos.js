@@ -74,29 +74,29 @@ console.log(matches({name: "Steven", year: 54}, {name: "Tamir", age: 54}));
 /*declare a function makeArray with param integer
 The integer should be the number of items in an array the function creates
 define a string of possible characters
+Iterate the amount of times of the integer input
+within that loop declare an empty string
+within the loop add another four loop that adds 1-10 random characters to string
+push each created string to empty array
+return array outside of loops
+console log test
 
 */
 function makeArray(integer){
 	var possible = "abcdefghijkl";
-	var string = "";
 	var ary = [];
 
-	
-	for (i = 0; i < (Math.floor(Math.random() * 10 + 1)); i++ ){
-		var randomLetter = possible[Math.floor(Math.random() * possible.length)];
+for (var i = 0; i < integer; i++){		
+	string = "";
+	for (var j = 0; j < (Math.floor((Math.random() * 10) + 1)); j++ ){
+		var randomLetter = possible[Math.floor(Math.random() * (possible.length - 1))];
 		string += randomLetter;
 		}
-
-
-	for (i = 0; i < integer; i++){
-		
-			
 		ary.push(string);
 	}
 	return ary;
-
 }
-	console.log(makeArray(8));
+console.log(makeArray(11));
 
 
 
