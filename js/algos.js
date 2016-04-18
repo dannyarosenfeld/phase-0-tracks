@@ -10,18 +10,17 @@ console log the result of the function
 
 function findLongest(ary){
 	var length = 0;
-	var longestWord;
+	
 	for (var i = 0; i < ary.length; i++){
 		if (ary[i].length > length){
 			var length = ary[i].length;
 			var longestWord = ary[i];
-			
 		}
 	}
-	console.log(longestWord);
+	return longestWord;
 }
 
-findLongest(["small string", "longest craziest string", "medium string", "string"])
+console.log(findLongest(["small string", "longest craziest string", "medium string", "string"]));
 
 /*FIRST LOOP
 ary[0] > 0 evaluates to true
@@ -96,8 +95,13 @@ for (var i = 0; i < integer; i++){
 	}
 	return ary;
 }
-console.log(makeArray(11));
 
+
+for (var i = 0; i < 10; i++){
+	var resultingArray = makeArray(6);
+	console.log(resultingArray);
+	console.log(findLongest(resultingArray));
+}
 
 
 
