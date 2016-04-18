@@ -1,0 +1,75 @@
+body {
+ /*max-width:960px; */
+  width: 70%;
+  margin-left:auto;
+  margin-right: auto;
+}
+
+blockquote {
+  border-left: 5px solid blue;
+  padding: 15px;
+  margin-left: 0px;
+}
+
+cite {
+  display: block;
+  margin-top: 10px;
+}
+
+#external-links ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+/* you're welcome to edit the
+image, figure, and figcaption CSS if you'd like, 
+but it's optional! */
+img {
+  width: 100%;
+}
+
+figure {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+figcaption {
+  font-style: italic;
+  text-align: right;
+}
+
+#external-links {
+  display:inline-block;
+  width: 20%;
+  vertical-align:text-top; 
+}
+
+main {
+  display:inline-block;
+  width: 75%;
+  vertical-align:text-top;
+  padding-left:.9em;
+  
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    font-size: .5em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  main {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #external-links {
+    display:block;
+    width: 75%;
+    vertical-align: text-top;
+    margin-left: auto;
+    margin-right: auto;
+  } 
+}
