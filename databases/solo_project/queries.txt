@@ -1,0 +1,45 @@
+SELECT * FROM posts;
+
+1|Kale Chips|234|true|2
+2|My Puppies|150|false|1
+3|My Yoga Mat|320|true|1
+
+UPDATE user SET user_name="@jiminycricket24" WHERE id=1;
+
+1|@jiminycricket24
+2|@angelatweetz
+
+SELECT * FROM posts, user WHERE user.id = posts.user_id;
+
+1|Kale Chips|234|true|2|2|@angelatweetz
+2|My Puppies|150|false|1|1|@jiminycricket24
+3|My Yoga Mat|320|true|1|1|@jiminycricket24
+
+SELECT posts.title, user.user_name FROM posts JOIN user ON posts.user_id = user.id;
+
+Kale Chips|@angelatweetz
+My Puppies|@jiminycricket24
+My Yoga Mat|@jiminycricket24
+
+DELETE FROM posts where title="My Puppies";
+
+1|Kale Chips|234|true|2
+3|My Yoga Mat|320|true|1
+
+Cross join
+__________
+
+SELECT user_id, word_count, user_name FROM user CROSS JOIN posts;
+
+2|234|@jiminycricket24
+1|320|@angelatweetz
+
+Outer join
+__________
+
+SELECT has_images, user_name, title FROM user LEFT OUTER JOIN posts ON user.id = posts.user_id;
+
+true|@jiminycricket24|My Yoga Mat
+true|@angelatweetz|Kale Chips
+
+
