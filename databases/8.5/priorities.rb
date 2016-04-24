@@ -128,19 +128,10 @@ loop do
 		
 		puts "here are all existing users. #{new_user_name} is the latest addition"
 		p users
-		puts "what exercise would you like to create for #{new_user_name}? type 'done' when finished"
-		break
-	elsif y_or_n == "n"
-		break
-	else
-		puts "please enter 'y' or 'n'"
-	end
+		puts "what exercise would you like to create for #{new_user_name}?"
 		
-end
-
-		
-		loop do
-
+	loop do
+		puts "enter an exercise type 'done' when finished"
 		priority_input = gets.chomp.to_s
 		break if priority_input == "done"
 
@@ -167,9 +158,20 @@ end
 			end		
 
 		else
-			puts "please enter 'y' or 'n'"
+			puts "please enter 'u' or 'l' when prompted, now list your exercise here"
 		end
 	end
+
+
+	elsif y_or_n == "n"
+		break
+	else
+		puts "please enter 'y' or 'n'"
+	end
+		
+end
+
+		
 
 
 	#p users
@@ -253,3 +255,4 @@ loop do
 	end
 end
 
+puts "I hope you had fun!  Try creating a new user for the best experience!"
