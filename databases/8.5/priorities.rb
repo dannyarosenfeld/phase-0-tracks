@@ -111,12 +111,42 @@ end
 		puts "here are all existing users. #{new_user_name} is the latest addition"
 		p users
 		#p new_user_name
-		puts "okay what priority would you like to create for #{new_user_name}?"
-		
-	else
-		puts "okay, lets check out which user could possibly be yours"
-		p users
+		loop do
+
+			puts "what priority would you like to create for #{new_user_name}? type 'done' when finished"
+			priority_input = gets.chomp.to_s
+			break if priority_input == "done"
+			puts "is this a high priority or low priority? (h/l)"
+			h_or_l = gets.chomp.to_s
+
+			
+
+			if h_or_l == "h"
+				#priorities = db.execute("SELECT * FROM low_priorities, high_priorities")
+				users.each do |user|
+					if user[1] == new_user_name
+						add_high(db, priority_input, "false", user[0])
+						show_priorities(db, user[0])
+					end
+				end		
+			
+			elsif h_or_l == "l"
+				#priorities = db.execute("SELECT * FROM low_priorities, high_priorities")
+				users.each do |user|
+					if user[1] == new_user_name
+						add_low(db, priority_input, "false", user[0])
+						show_priorities(db, user[0])
+					end
+				end		
+
+			else
+				puts "okay, lets check out which user could possibly be yours"
+				p users
+				break
+			end
+		end
 	end
+
 	#p users
 	
 	
@@ -144,7 +174,7 @@ delete_item(db, "get a haircut")
 =end
 
 
-#priorities = db.execute("SELECT * FROM low_priorities, high_priorities")
+
 #priorities.class
 #priorities
 
