@@ -43,7 +43,7 @@ db.execute(create_users_table)
 #methods to insert users and priorities
 
 def create_user(db, user_name)
-db.execute("INSERT INTO users(user_name) VALUES (?)", [user_name])
+db.execute("INSERT INTO users (user_name) VALUES (?)", [user_name])
 puts "added new user"
 end
 
@@ -85,8 +85,51 @@ def delete_item(db, name)
 	puts "deleted #{name} from priorities"
 end
 
+users = db.execute("SELECT * FROM users")
+loop do
 
-create_user(db, "blah yeah")
+	puts "are you new to the priorities app? y/n "
+	y_or_n = gets.chomp.to_s
+	if y_or_n == "y"
+		puts "enter a new user name to begin"
+		new_user_name = gets.chomp.to_s
+		create_user(db, "#{new_user_name}")
+		add_high(db, "withdrawal money", "false", 1)
+		add_low(db, "take a bubble bath", "false", 1)
+
+		p users
+		users.each do |user|
+			if user[1] == new_user_name
+				delete_user(db, user[0])
+
+				show_priorities(db, user[0])
+			end
+		end
+		
+
+		p users
+		p new_user_name
+		
+	elsif y_or_n == "n"
+		break
+	end
+
+	users.each do |user|			
+		if user[1] == new_user_name
+			show_priorities(db, user[0])
+		end
+	end
+
+	p users
+	break
+	puts "okay what priority would you like to create for #{new_user_name}?"
+
+end
+
+
+
+
+#create_user(db, "blah yeah")
 add_high(db, "feed the dog", "false", 1)
 add_low(db, "get a haircut", "false", 1)
 =begin
@@ -102,7 +145,7 @@ mark_complete(db, "true", "feed the dog")
 delete_item(db, "get a haircut")
 
 =end
-users = db.execute("SELECT * FROM users")
+
 p users
 priorities = db.execute("SELECT * FROM low_priorities, high_priorities")
 #priorities.class
@@ -110,39 +153,13 @@ priorities = db.execute("SELECT * FROM low_priorities, high_priorities")
 
 
 #delete_user(db, "blah yeah")
-loop do
-	puts "are you new to the priorities app? y/n "
-	y_or_n = gets.chomp.to_s
-	if y_or_n == "y"
-		puts "enter a new user name to begin"
-		new_user_name = gets.chomp.to_s
-
-		users.each do |user|
-			if user[1] == new_user_name
-				delete_user(db, user[0])
-
-				show_priorities(db, user[0])
-			end
-		end
-		create_user(db, new_user_name)
-
-		p users
-
-		users.each do |user|
-			puts "ist this doing something"
-			if user[1] == new_user_name
-				show_priorities(db, user[0])
-			end
-		end
-
-		puts "okay what priority would you like to create for #{new_user_name}?"
 
 
-	elsif y_or_n == "n"
-		break
-	end
 
-end
+p users
+
+
+
 
 loop do
 	puts "Enter an existing username"
