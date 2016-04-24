@@ -4,10 +4,8 @@ require 'faker'
 
 #make call to create sql database
 db = SQLite3::Database.new("fitapp.db")
-#create methods to create sql tables for workouts
-#with completed? Boolean column
 
-
+#create sql tables for workouts
 create_upper_body = <<-SQL
 CREATE TABLE IF NOT EXISTS upper_body(
 id INTEGER PRIMARY KEY,
@@ -41,7 +39,6 @@ db.execute(create_lower_body)
 db.execute(create_users_table)
 
 #methods to insert users and exercises
-
 def create_user(db, user_name)
 db.execute("INSERT INTO users (user_name) VALUES (?)", [user_name])
 puts "added new user"
