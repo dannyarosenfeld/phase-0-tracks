@@ -49,7 +49,7 @@ end
 
 def delete_user (db, user_name)
 	db.execute("DELETE FROM users WHERE user_name=?", [user_name])
-	puts "deleted #{user_name} from users"
+	#puts "deleted #{user_name} from users"
 end
 
 def add_high(db, name, complete, user_id)
@@ -84,20 +84,21 @@ def delete_item(db, name)
 	 db.execute("DELETE FROM high_priorities WHERE name=?", [name])
 	puts "deleted #{name} from priorities"
 end
+#create_user(db, "this should do it")
 
-users = db.execute("SELECT * FROM users")
-loop do
+
 
 	puts "are you new to the priorities app? y/n "
 	y_or_n = gets.chomp.to_s
 	if y_or_n == "y"
 		puts "enter a new user name to begin"
 		new_user_name = gets.chomp.to_s
-		create_user(db, "#{new_user_name}")
-		add_high(db, "withdrawal money", "false", 1)
-		add_low(db, "take a bubble bath", "false", 1)
+		create_user(db, new_user_name)
+		#add_high(db, "withdrawal money", "false", 1)
+		#add_low(db, "take a bubble bath", "false", 1)
 
-		p users
+		users = db.execute("SELECT * FROM users")
+		#p users
 		users.each do |user|
 			if user[1] == new_user_name
 				delete_user(db, user[0])
@@ -108,23 +109,21 @@ loop do
 		
 
 		p users
-		p new_user_name
+		#p new_user_name
 		
-	elsif y_or_n == "n"
-		break
-	end
-
-	users.each do |user|			
-		if user[1] == new_user_name
-			show_priorities(db, user[0])
+	else
+		
+		users.each do |user|			
+			if user[1] == new_user_name
+				show_priorities(db, user[0])
+			end
 		end
 	end
-
-	p users
-	break
+	#p users
+	
 	puts "okay what priority would you like to create for #{new_user_name}?"
 
-end
+
 
 
 
