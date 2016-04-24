@@ -140,8 +140,8 @@ end
 				end		
 
 			else
-				puts "okay, lets check out which user could possibly be yours"
-				p users
+				#puts "okay, lets check out which user could possibly be yours"
+				#p users
 				break
 			end
 		end
@@ -182,16 +182,32 @@ delete_item(db, "get a haircut")
 #delete_user(db, "blah yeah")
 
 
-
-
-
-
-
-
 loop do
-	puts "Enter an existing username"
+	users = db.execute("SELECT * FROM users")
+	puts "here is a list of all of our users"
+	p users
+	puts "Browse each user's profile by entering an existing username- type 'done' to continue"
 	new_or_exist = gets.chomp.to_s
-	p new_or_exist
+	break if new_or_exist == "done"
+	puts "here is #{new_or_exist}'s profile"
+
+	users.each do |user|
+		if user[1] == new_or_exist
+			show_priorities(db, user[0])
+		end
+	end
+end
+
+
+loop do 
+	puts "Holy moly! You've become the personal trainer now/ all powerful administrator!"
+		users = db.execute("SELECT * FROM users")
+	puts "here is a list of all of our users"
+	p users
+	puts "select a user to gain access to their profile- type 'done' to give up your administrative powers"
+	new_or_exist = gets.chomp.to_s
+	break if new_or_exist == "done"
+	puts "here is #{new_or_exist}'s profile"
 
 	users.each do |user|
 		if user[1] == new_or_exist
@@ -199,5 +215,15 @@ loop do
 		end
 	end
 
-	puts "okay what priority would #{new_or_exist} like to update?"
+	puts "enter the name of the exercise you want to mark as complete for #{new_or_exist}"
+	exercise_name = gets.chomp.to_s
+	users.each do |user|
+		if user[1] == new_or_exist
+			mark_complete(db, "true", exercise_name)
+			puts "you just marked #{exercise_name} as complete on #{new_or_exist}'s profile"
+			show_priorities(db, user[0])
+		end
+	end
 end
+
+
