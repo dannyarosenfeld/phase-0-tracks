@@ -8,29 +8,29 @@ db = SQLite3::Database.new("fitapp.db")
 #create sql tables for workouts
 create_upper_body = <<-SQL
 CREATE TABLE IF NOT EXISTS upper_body(
-id INTEGER PRIMARY KEY,
-name VARCHAR(255),
-complete BOOLEAN,
-user_id INT,
-FOREIGN KEY (user_id) REFERENCES users(id)
+	id INTEGER PRIMARY KEY,
+	name VARCHAR(255),
+	complete BOOLEAN,
+	user_id INT,
+	FOREIGN KEY (user_id) REFERENCES users(id)
 )
 SQL
 
 
 create_lower_body = <<-SQL
 CREATE TABLE IF NOT EXISTS lower_body(
-id INTEGER PRIMARY KEY,
-name VARCHAR(255),
-complete BOOLEAN,
-user_id INT,
-FOREIGN KEY (user_id) REFERENCES users(id)
+	id INTEGER PRIMARY KEY,
+	name VARCHAR(255),
+	complete BOOLEAN,
+	user_id INT,
+	FOREIGN KEY (user_id) REFERENCES users(id)
 )
 SQL
 
 create_users_table = <<-SQL
-CREATE TABLE IF NOT EXISTS users(
-id INTEGER PRIMARY KEY,
-user_name VARCHAR(255)
+	CREATE TABLE IF NOT EXISTS users(
+	id INTEGER PRIMARY KEY,
+	user_name VARCHAR(255)
 )
 SQL
 
@@ -40,34 +40,37 @@ db.execute(create_users_table)
 
 #methods to insert users and exercises
 def create_user(db, user_name)
-db.execute("INSERT INTO users (user_name) VALUES (?)", [user_name])
-puts "added new user"
+	db.execute("INSERT INTO users (user_name) VALUES (?)", [user_name])
+	puts "added new user"
 end
-
+#delete a user by name
 def delete_user (db, user_name)
 	db.execute("DELETE FROM users WHERE user_name=?", [user_name])
 end
 
+#add leg exercise for specific user
 def add_lower_body(db, name, complete, user_id)
-complete = "incomplete"
-db.execute("INSERT INTO lower_body (name, complete, user_id) VALUES (?,?,?)", [name, complete, user_id])
-puts "added leg workout"
+	complete = "incomplete"
+	db.execute("INSERT INTO lower_body (name, complete, user_id) VALUES (?,?,?)", [name, complete, user_id])
+	puts "added leg workout"
 end
 
+#add upper body exercise for specific user
 def add_upper_body(db, name, complete, user_id)
-complete = "incomplete"
-db.execute("INSERT INTO upper_body (name, complete, user_id) VALUES (?,?,?)", [name, complete, user_id])
-puts "added upper body workout"
+	complete = "incomplete"
+	db.execute("INSERT INTO upper_body (name, complete, user_id) VALUES (?,?,?)", [name, complete, user_id])
+	puts "added upper body workout"
 end
 
+#display single user's workout plan
 def show_priorities(db, user_name)
-print "\n"
-p "Upper Body Exercises"
-p db.execute("SELECT * FROM upper_body WHERE user_id=?", [user_name])
-print "\n"
-p "Leg Exercises"
-p db.execute("SELECT * FROM lower_body WHERE user_id=?", [user_name])
-print "\n"
+	print "\n"
+	p "Upper Body Exercises"
+	p db.execute("SELECT * FROM upper_body WHERE user_id=?", [user_name])
+	print "\n"
+	p "Leg Exercises"
+	p db.execute("SELECT * FROM lower_body WHERE user_id=?", [user_name])
+	print "\n"
 end
 
 #create method to mark item as Completed
@@ -121,7 +124,8 @@ loop do
 		p users
 		print "\n"
 		puts "what exercise would you like to create for #{new_user_name}?"
-		
+	
+	#begin second loop for entering user exercises	
 	loop do
 		puts "enter an exercise type 'done' when finished"
 		priority_input = gets.chomp.to_s
@@ -157,7 +161,7 @@ loop do
 	end		
 end
 
-
+#begin profile browsing feature
 loop do
 	users = db.execute("SELECT * FROM users")
 	puts "here is a list of all of our users"
@@ -175,7 +179,7 @@ loop do
 	end
 end
 
-
+#give administrative access
 loop do 
 	puts "Holy moly! You've become the personal trainer now/ all powerful administrator!"
 	print "\n"
