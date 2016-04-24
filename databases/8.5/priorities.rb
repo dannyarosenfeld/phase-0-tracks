@@ -85,8 +85,22 @@ def delete_item(db, name)
 	puts "deleted #{name} from priorities"
 end
 #create_user(db, "this should do it")
+	users = db.execute("SELECT * FROM users")
+	
+	if users.empty?
+		create_user(db, "stephanie platcow")
+		add_high(db, "work out back", "false", 1)
+		add_low(db, "work out legs", "false", 1)
 
+		create_user(db, "jacob phd")
+		add_high(db, "work out back", "false", 2)
+		add_low(db, "work out legs", "false", 2)
 
+		create_user(db, "angela ")
+		add_high(db, "work out back", "false", 3)
+		add_low(db, "work out legs", "false", 3)
+	end
+	
 
 	puts "are you new to the priorities app? y/n "
 	y_or_n = gets.chomp.to_s
