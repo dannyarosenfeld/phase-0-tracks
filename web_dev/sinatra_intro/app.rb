@@ -14,10 +14,13 @@ get '/' do
 end
 =end
 
-get '/:name' do
-  all_names = db.execute("SELECT * FROM students WHERE name=?", [params[:name]]) 
- p all_names.to_s
-
+get '/:campus' do
+  all_names = db.execute("SELECT * FROM students WHERE campus=?", [params[:campus]]) 
+  string = ""
+  all_names.each do |name|
+     string << "#{name['name']} goes to SF to learn at DBC <br><br>"
+  end
+string
 end
 # write a GET route with
 # route parameters
