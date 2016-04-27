@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	  <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+<body>
+	
+<section id="external-links">
+    <h1>Navigation</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="puppies.html">Puppies</a></li>
+    </ul>
+
+      <p class="sidetext">helvetica master cleanse distillery food truck raw denim skateboard blog. Chillwave tacos pinterest fixie, gentrify man braid post-ironic disrupt skateboard food truck try-hard waistcoat mustache selvage synth. Narwhal freegan sustainable austin affogato. Sartorial man braid sriracha church-key aesthetic, four loko tofu shabby chic.</p>
+     
+  </section>
+  <div class="upper-right"><strong>We love dogs so much </strong> <br> <strong>we put it in fixed text</strong></div>
+  <main>
+    <h1>Adoption Center</h1>
+
+    <h2>Learn more about which of our beautiful puppies are available</h2>
+    <p id="blue">Lo-fi echo park distillery, paleo brunch flexitarian XOXO. Before they sold out tote bag raw denim deep v iPhone crucifix. Microdosing freegan tofu, cornhole messenger bag forage farm-to-table hammock crucifix taxidermy tote bag man braid master cleanse. Cred pitchfork fanny pack lumbersexual artisan semiotics. </p>
+    <img src="momma-dog.jpg" width="600px" alt="a mother leading her puppies" id="myimg">
+   <h2>The nature of our company</h2>
+    <ol>
+      <li>Non-profit</li>
+      <li>Certified</li>
+      <li>Treat our dogs very well</li>
+      <li>We include toys and food with every adoption!!</li>
+    </ol>
+
+    <h2>We have a huge selection of animals looking for a warm home to choose from!!</h2>
+     <p class="grey-border">Synth flannel jean shorts, small batch affogato direct trade put a bird on it ramps neutra VHS pitchfork whatever ennui forage. Dreamcatcher authentic portland quinoa cronut offal. Quinoa skateboard banjo, narwhal tumblr tattooed hella kale chips typewriter tousled dreamcatcher. Farm-to-table yuccie polaroid, vinyl migas pop-up authentic austin. Godard mlkshk kombucha sartorial chicharrones, normcore crucifix seitan cray. Bushwick readymade before they sold out selvage pinterest aesthetic hashtag sartorial ramps. Everyday carry meggings kogi, cronut brooklyn listicle bushwick tofu dreamcatcher tote bag deep v pour-over freegan.</p>
+   
+
+   <h2>And even more!</h2>
+    <p class="grey-border">Before they sold out tofu letterpress truffaut artisan chicharrones. PBR&B polaroid try-hard offal, locavore cray salvia gluten-free +1 irony stumptown cold-pressed single-origin coffee tumblr. Green juice normcore meh, selvage viral retro gentrify +1 you probably haven't heard of them small batch aesthetic intelligentsia letterpress. Stumptown organic lumbersexual, bespoke helvetica master cleanse distillery food truck raw denim skateboard blog. Chillwave tacos pinterest fixie, gentrify man braid post-ironic disrupt skateboard food truck try-hard waistcoat mustache selvage synth. Narwhal freegan sustainable austin affogato. Sartorial man braid sriracha church-key aesthetic, four loko tofu shabby chic.  
+  </main>
+
+<script src="script.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script>
+
+$(function(){
+$('h2').mouseenter(function(){
+$(this).css("background", "black");
+
+});
+
+
+$('h2').mouseleave(function(){
+$(this).css("background", "green");
+});
+
+
+$('.sidetext').hover(function(){
+$(this).animate({
+height: "toggle",
+left: "+=200",
+opacity: "toggle",
+"margin-left": "300px",
+"margin-top": "-300px"
+}, 5000, function(){
+
+});
+});
+
+$('li').hover(function(){
+$(this).append("<div>This thingy!</div>");
+});
+
+$('img').hover(function(){
+$(this).toggle(2000);
+});
+
+$('h1').mouseenter(function(){
+$(this).animate({
+"margin-left": "400px",
+}, 2000, function(){
+
+});
+});
+
+$('h1').mouseleave(function(){
+$(this).animate({
+"margin-left": "-300px"
+}, 4000, function(){
+
+});
+});
+
+
+});
+
+
+
+</script>
+</body>
+</html>
