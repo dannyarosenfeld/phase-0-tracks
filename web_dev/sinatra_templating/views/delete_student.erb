@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Delete a student</title>
+</head>
+<body>
+
+<form action="/students" method="POST">
+	<input type="text" name="name" placeholder="name">
+	<button type="submit">Delete</button>
+</form>
+
+<% @students.each do |student| %>
+<li><%= student['name'] %> age: <%=  student['age'] %> campus: <%=  student['campus'] %></li>
+
+<% end %>
+	
+</body>
+</html>
